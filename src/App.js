@@ -2,19 +2,48 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const people = [
+  {
+    name: 'John Doe',
+    age: 101,
+    gender: 'male',
+    nationality: 'USA',
+    hobbies: 'Great with examples in programming',
+    objectId: 1
+  },
+  {
+    name: 'Fortune Ekeruo',
+    age: 25,
+    gender: 'male',
+    nationality: 'Nigerian',
+    hobbies: 'Coding',
+    objectId: 2
+  },
+  {
+    name: 'Francia Raisa',
+    age: 'old enough',
+    gender: 'female',
+    nationality: 'USA',
+    hobbies: 'Dancing, Ice skating and Acting',
+    objectId: 3
+  }
+]
+
 class App extends Component {
   render() {
-    const def = 'Use a defined js expresssion';
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>{def}</h1>
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {
+          people.map((person) => {
+              <div key={person.objectId}>
+                <div><strong>Name: </strong> {person.name} </div>
+                <div><strong>Age: </strong> {person.age} </div>
+                <div><strong>Gender: </strong> {person.gender} </div>
+                <div><strong>Nationality: </strong> {person.nationality} </div>
+                <div><strong>Hobbies: </strong> {person.hobbies} </div>
+              </div>
+          })
+        }
       </div>
     );
   }
