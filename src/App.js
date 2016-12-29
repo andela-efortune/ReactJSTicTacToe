@@ -4,10 +4,12 @@ import './App.css';
 
 class App extends Component {
   render() {
+    const def = 'Use a defined js expresssion';
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <h1>{def}</h1>
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
